@@ -9,56 +9,70 @@ body {
     background: radial-gradient(circle at top, #0b0f2a, #050816, #000000);
     color: white;
     text-align: center;
-    padding: 50px;
-    overflow-x: hidden;
+    padding: 40px;
 }
 
-/* Glow heading */
+/* Heading */
 h1 {
-    font-size: 42px;
+    font-size: 40px;
     margin-bottom: 30px;
     color: #a78bfa;
     text-shadow: 0 0 10px #a78bfa, 0 0 20px #6366f1, 0 0 30px #3b82f6;
 }
 
+/* Container */
+.container {
+    margin-top: 20px;
+}
+
 /* Buttons / Links */
-a, button {
+a {
     display: inline-block;
     margin: 10px;
     padding: 12px 25px;
     text-decoration: none;
     color: white;
     background: linear-gradient(45deg, #6366f1, #a855f7);
-    border: none;
     border-radius: 10px;
-    cursor: pointer;
     transition: 0.3s;
     box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
 }
 
-a:hover, button:hover {
+a:hover {
     transform: scale(1.08);
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.9);
 }
 
 /* Inputs */
 input {
     width: 260px;
     padding: 12px;
-    margin: 8px;
+    margin: 10px;
     border-radius: 8px;
     border: none;
     outline: none;
     background: #111827;
     color: white;
-    box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
 }
 
-input:focus {
-    box-shadow: 0 0 15px #a78bfa;
-}
+/* Mobile Responsive */
+@media (max-width: 600px) {
 
-/* Form */
-form {
-    margin-top: 20px;
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    input {
+        width: 90%;
+    }
+
+    a {
+        width: 90%;
+        display: block;
+        margin: 10px auto;
+    }
 }
