@@ -1,20 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
 body {
-  background: black;
-  color: white;
-  font-family: Arial;
+    background: radial-gradient(circle at top, #0b0f2a, #050816, #000000);
+    color: white;
+    text-align: center;
+    padding: 50px;
+    overflow-x: hidden;
 }
 
-.container {
-  margin: 50px auto;
-  width: 80%;
-  padding: 20px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 10px;
+/* Glow heading */
+h1 {
+    font-size: 42px;
+    margin-bottom: 30px;
+    color: #a78bfa;
+    text-shadow: 0 0 10px #a78bfa, 0 0 20px #6366f1, 0 0 30px #3b82f6;
 }
 
-input, button {
-  display: block;
-  margin: 10px 0;
-  padding: 10px;
-  width: 100%;
+/* Buttons / Links */
+a, button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(45deg, #6366f1, #a855f7);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+a:hover, button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+}
+
+/* Inputs */
+input {
+    width: 260px;
+    padding: 12px;
+    margin: 8px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #111827;
+    color: white;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
+}
+
+input:focus {
+    box-shadow: 0 0 15px #a78bfa;
+}
+
+/* Form */
+form {
+    margin-top: 20px;
 }
