@@ -1,0 +1,45 @@
+<div class="container">
+<h2>Admin Panel</h2>
+<button onclick="loadData()">Load</button>
+<table id="table"></table>
+</div>
+
+<div id="modal" style="display:none;background:#000a;position:fixed;top:0;width:100%;height:100%;">
+<div style="background:#222;margin:10% auto;padding:20px;width:80%">
+<span onclick="closeModal()">X</span>
+<p id="info"></p>
+</div>
+</div>
+
+<script>
+let token=localStorage.getItem("token");
+
+function loadData(){
+ fetch("/all-data",{headers:{token}})
+ .then(r=>r.json())
+ .then(data=>{
+  let html="";
+  data.forEach(d=>{
+    html+=`<tr>
+      <td>${d.employeeEmail}</td>
+      <td>${d.name}</td>
+      <td><button onclick="view(${d.userId})">Profile</button></td>
+    </tr>`;
+  });
+  table.innerHTML=html;
+ });
+}
+
+function view(id){
+ fetch("/employee/"+id,{headers:{token}})
+ .then(r=>r.json())
+ .then(d=>{
+   info.innerText="Email: "+d.user.email+" Entries: "+d.totalEntries;
+   modal.style.display="block";
+ });
+}
+
+function closeModal(){
+ modal.style.display="none";
+}
+</script>

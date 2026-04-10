@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Register</h2>
+  <input id="email">
+  <input id="password">
+  <button onclick="register()">Register</button>
+</div>
+
+<script>
+function register(){
+ fetch("/register",{
+  method:"POST",
+  headers:{"Content-Type":"application/json"},
+  body:JSON.stringify({
+    email:email.value,
+    password:password.value
+  })
+ }).then(()=>alert("Done"));
+}
+</script>

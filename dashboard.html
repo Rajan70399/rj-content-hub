@@ -1,0 +1,29 @@
+<div class="container">
+<form id="form">
+<input name="name" placeholder="Name">
+<input name="email">
+<input name="phone">
+<input name="address">
+<input name="aadhaar">
+<input name="pan">
+<input type="file" name="selfie">
+<button>Submit</button>
+</form>
+</div>
+
+<script>
+let token=localStorage.getItem("token");
+
+form.onsubmit=async(e)=>{
+ e.preventDefault();
+ let data=new FormData(form);
+
+ await fetch("/submit",{
+  method:"POST",
+  headers:{token},
+  body:data
+ });
+
+ alert("Saved");
+}
+</script>
